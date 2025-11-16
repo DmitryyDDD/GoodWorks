@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь событий - Добрые дела Росатома</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+</head>
+<body>
+    <header class="rosatom-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Добрые дела <span class="logo-accent">Росатома</span></h1>
+            </div>
+            
+            <div class="header-city-selector">
+                <select id="header-city" aria-label="Выберите ваш город">
+                    <option value="">Все города</option>
+                    <option value="angarsk">Ангарск</option>
+                    <option value="baykalsk">Байкальск</option>
+                    <option value="balakovo">Балаково</option>
+                    <option value="bilibino">Билибино</option>
+                    <option value="volgodonsk">Волгодонск</option>
+                    <option value="glazov">Глазов</option>
+                    <option value="zheleznogorsk">Железногорск</option>
+                    <option value="novouralsk">Новоуральск</option>
+                    <option value="obninsk">Обнинск</option>
+                    <option value="sosnovy_bor">Сосновый Бор</option>
+                </select>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>  
+                    <li><a href="{% url 'nko_list' %}">НКО</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">База знаний</a></li>
+                    <li><a href="{% url 'calendar' %}">Календарь</a></li>
+                    <li><a href="{% url 'news_list' %}">Новости</a></li>
+                    <li><a href="{% url 'login' %}">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="rosatom-page-header">
+            <div class="container">
+                <h2>Календарь событий</h2>
+                <p>Будьте в курсе предстоящих мероприятий, акций и событий в вашем городе</p>
+                
+                <div class="rosatom-calendar-filters">
+                    <div class="rosatom-filters">
+                        <select id="filter-city" aria-label="Фильтр по городу">
+                            <option value="">Все города</option>
+                            <option value="angarsk">Ангарск</option>
+                            <option value="balakovo">Балаково</option>
+                            <option value="volgodonsk">Волгодонск</option>
+                            <option value="glazov">Глазов</option>
+                            <option value="zheleznogorsk">Железногорск</option>
+                            <option value="novouralsk">Новоуральск</option>
+                            <option value="obninsk">Обнинск</option>
+                            <option value="sosnovy_bor">Сосновый Бор</option>
+                        </select>
+                        
+                        <select id="filter-category" aria-label="Фильтр по категории">
+                            <option value="">Все категории</option>
+                            <option value="volunteer">Волонтерство</option>
+                            <option value="ecology">Экология</option>
+                            <option value="social">Социальные</option>
+                            <option value="education">Образование</option>
+                            <option value="culture">Культура</option>
+                            <option value="sport">Спорт</option>
+                        </select>
+                        
+                    </div>
+                    
+                    <div class="rosatom-calendar-actions">
+                        <button class="rosatom-calendar-view-btn active" data-view="month">Месяц</button>
+                        <button class="rosatom-calendar-view-btn" data-view="list">Список</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rosatom-calendar-section">
+            <div class="container">
+                <div class="rosatom-calendar-header">
+                    <button class="rosatom-calendar-nav-btn" id="prev-month">←</button>
+                    <h3 id="current-month">Март 2024</h3>
+                    <button class="rosatom-calendar-nav-btn" id="next-month">→</button>
+                </div>
+
+                <div class="rosatom-calendar-views">
+                    <!-- Месячный вид -->
+                    <div class="rosatom-calendar-month-view active" id="month-view">
+                        <div class="rosatom-calendar-weekdays">
+                            <div class="rosatom-weekday">Пн</div>
+                            <div class="rosatom-weekday">Вт</div>
+                            <div class="rosatom-weekday">Ср</div>
+                            <div class="rosatom-weekday">Чт</div>
+                            <div class="rosatom-weekday">Пт</div>
+                            <div class="rosatom-weekday">Сб</div>
+                            <div class="rosatom-weekday">Вс</div>
+                        </div>
+                        <div class="rosatom-calendar-days" id="calendar-days">
+                            <!-- Дни будут заполнены через JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Вид списка -->
+                    <div class="rosatom-calendar-list-view" id="list-view">
+                        <div class="rosatom-events-list" id="events-list">
+                            <!-- События будут заполнены через JavaScript -->
+                            <div class="rosatom-loading">Загрузка событий...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rosatom-footer">
+        <div class="container">
+            <p>&copy; 2025 Добрые дела Росатома. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для подтверждения регистрации -->
+    <div id="registration-confirm-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">✅</div>
+            <h3>Вы успешно записаны!</h3>
+            <p>Вы записались на мероприятие. Подробности будут отправлены на вашу почту.</p>
+            <button class="modal-close-btn">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для требования входа -->
+    <div id="login-required-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">🔒</div>
+            <h3>Требуется вход</h3>
+            <p>Для записи на мероприятие необходимо войти в систему.</p>
+            <div class="modal-actions">
+                <button class="modal-close-btn">Отмена</button>
+                <a href="login.html" class="modal-login-btn">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/calendar.js' %}"></script>
+</body>
+</html>

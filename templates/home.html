@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добрые дела Росатома</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Добрые дела <span class="logo-accent">Росатома</span></h1>
+            </div>
+            
+            <div class="header-city-selector">
+                <select id="header-city" aria-label="Выберите ваш город">
+                    <option value="">Все города</option>
+                    <option value="angarsk">Ангарск</option>
+                    <option value="baykalsk">Байкальск</option>
+                    <option value="balakovo">Балаково</option>
+                    <option value="bilibino">Билибино</option>
+                    <option value="volgodonsk">Волгодонск</option>
+                    <option value="glazov">Глазов</option>
+                    <!-- Остальные города -->
+                </select>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>  
+                    <li><a href="{% url 'nko_list' %}">НКО</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">База знаний</a></li>
+                    <li><a href="{% url 'calendar' %}">Календарь</a></li>
+                    <li><a href="{% url 'news_list' %}">Новости</a></li>
+                    <li><a href="{% url 'login' %}">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Станьте частью добрых дел в вашем городе!</h2>
+                    <div class="hero-text">
+                        <p class="hero-main-text">Добрые дела Росатома — все инициативы вашего города в одном месте.</p>
+                        <p class="hero-description">Единый портал для жителей, волонтёров и НКО, где собрана вся информация о социальных, экологических, культурных, образовательных и спортивных инициативах в городах присутствия Росатома.</p>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="nko.html" class="cta-button primary">Найти организации</a>
+                        <a href="calendar.html" class="cta-button secondary">Смотреть события</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="atom-logo">
+                        <div class="atom-core"></div>
+                        <div class="atom-orbit orbit-1"></div>
+                        <div class="atom-orbit orbit-2"></div>
+                        <div class="atom-orbit orbit-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h3>Возможности портала</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <h4>Карта организаций</h4>
+                        <p>Найдите организации по городу и направлению деятельности</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h4>База знаний</h4>
+                        <p>Просматривайте видео и материалы для скачивания</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h4>Календарь событий</h4>
+                        <p>Отметьте интересные события, чтобы ничего не пропустить</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📰</div>
+                        <h4>Новости и анонсы</h4>
+                        <p>Будьте в курсе последних инициатив и грантов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Добрые дела Росатома. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

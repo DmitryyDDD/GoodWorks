@@ -1,0 +1,305 @@
+/* Стили для страницы регистрации */
+.rosatom-register-section {
+    padding: 3rem 0;
+    background: #f8f9fa;
+    min-height: 70vh;
+}
+
+.rosatom-register-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    align-items: start;
+}
+
+.rosatom-register-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.rosatom-register-card h3 {
+    color: #004b87;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.rosatom-register-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Стили формы */
+.rosatom-register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rosatom-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.rosatom-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.rosatom-form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.rosatom-form-group input,
+.rosatom-form-group select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.rosatom-form-group input:focus,
+.rosatom-form-group select:focus {
+    outline: none;
+    border-color: #0077c8;
+    box-shadow: 0 0 0 3px rgba(0, 119, 200, 0.1);
+}
+
+.rosatom-form-group input.error,
+.rosatom-form-group select.error {
+    border-color: #ff6b6b;
+}
+
+.rosatom-form-group input.success,
+.rosatom-form-group select.success {
+    border-color: #4caf50;
+}
+
+.rosatom-form-error {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.rosatom-form-error.show {
+    display: block;
+}
+
+.rosatom-password-requirements {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+/* Чекбоксы */
+.rosatom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-weight: normal;
+    color: #333;
+    line-height: 1.4;
+}
+
+.rosatom-checkbox input {
+    display: none;
+}
+
+.rosatom-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    margin-top: 0.25rem;
+}
+
+.rosatom-checkbox input:checked + .rosatom-checkmark {
+    background: #0077c8;
+    border-color: #0077c8;
+}
+
+.rosatom-checkbox input:checked + .rosatom-checkmark::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rosatom-checkbox a {
+    color: #0077c8;
+    text-decoration: none;
+}
+
+.rosatom-checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* Кнопка регистрации */
+.rosatom-register-btn {
+    background: #0077c8;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.rosatom-register-btn:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 119, 200, 0.3);
+}
+
+.rosatom-register-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.rosatom-login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.rosatom-login-link a {
+    color: #0077c8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.rosatom-login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Блок преимуществ */
+.rosatom-register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rosatom-benefits-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.rosatom-benefits-card h4 {
+    color: #004b87;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.rosatom-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rosatom-benefit-item:last-child {
+    margin-bottom: 0;
+}
+
+.rosatom-benefit-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.rosatom-benefit-content h5 {
+    color: #333;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.rosatom-benefit-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .rosatom-register-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .rosatom-register-benefits {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .rosatom-register-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .rosatom-form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .rosatom-benefits-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rosatom-register-section {
+        padding: 2rem 0;
+    }
+    
+    .rosatom-register-card {
+        padding: 1.5rem;
+    }
+    
+    .rosatom-benefits-card {
+        padding: 1.25rem;
+    }
+    
+    .rosatom-benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .rosatom-benefit-icon {
+        align-self: center;
+    }
+}

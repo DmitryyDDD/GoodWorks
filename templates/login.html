@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Добрые дела Росатома</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header class="rosatom-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Добрые дела <span class="logo-accent">Росатома</span></h1>
+            </div>
+            
+            <div class="header-city-selector">
+                <select id="header-city" aria-label="Выберите ваш город">
+                    <option value="">Все города</option>
+                    <option value="angarsk">Ангарск</option>
+                    <option value="baykalsk">Байкальск</option>
+                    <option value="balakovo">Балаково</option>
+                    <option value="bilibino">Билибино</option>
+                    <option value="volgodonsk">Волгодонск</option>
+                    <option value="glazov">Глазов</option>
+                    <option value="zheleznogorsk">Железногорск</option>
+                    <option value="novouralsk">Новоуральск</option>
+                    <option value="obninsk">Обнинск</option>
+                    <option value="sosnovy_bor">Сосновый Бор</option>
+                </select>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>  
+                    <li><a href="{% url 'nko_list' %}">НКО</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">База знаний</a></li>
+                    <li><a href="{% url 'calendar' %}">Календарь</a></li>
+                    <li><a href="{% url 'news_list' %}">Новости</a></li>
+                    <li><a href="{% url 'login' %}">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="rosatom-page-header">
+            <div class="container">
+                <h2>Вход в аккаунт</h2>
+                <p>Войдите в свой аккаунт чтобы продолжить</p>
+            </div>
+        </section>
+
+        <section class="rosatom-login-section">
+            <div class="container">
+                <div class="rosatom-login-container">
+                    <!-- Левая часть - форма -->
+                    <div class="rosatom-login-form-container">
+                        <div class="rosatom-login-card">
+                            <h3>Войти в аккаунт</h3>
+                            <p class="rosatom-login-subtitle">Используйте ваш email и пароль для входа</p>
+
+                            <form class="rosatom-login-form" id="login-form">
+                                <div class="rosatom-form-group">
+                                    <label for="login-email">Email *</label>
+                                    <input type="email" id="login-email" name="email" required>
+                                    <div class="rosatom-form-error" id="email-error"></div>
+                                </div>
+
+                                <div class="rosatom-form-group">
+                                    <label for="login-password">Пароль *</label>
+                                    <input type="password" id="login-password" name="password" required>
+                                    <div class="rosatom-form-error" id="password-error"></div>
+                                </div>
+
+                                <div class="rosatom-login-options">
+                                    <label class="rosatom-checkbox">
+                                        <input type="checkbox" id="remember-me" name="remember_me">
+                                        <span class="rosatom-checkmark"></span>
+                                        Запомнить меня
+                                    </label>
+                                    <a href="forgot-password.html" class="rosatom-forgot-password">
+                                        Забыли пароль?
+                                    </a>
+                                </div>
+
+                                <button type="submit" class="rosatom-login-btn" id="login-btn">
+                                    Войти
+                                </button>
+
+                                <div class="rosatom-register-link">
+                                    Ещё нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Правая часть - преимущества -->
+                    <div class="rosatom-login-benefits">
+                        <div class="rosatom-benefits-card">
+                            <h4>С возвращением!</h4>
+                            
+                            <div class="rosatom-benefit-item">
+                                <div class="rosatom-benefit-icon">📅</div>
+                                <div class="rosatom-benefit-content">
+                                    <h5>Ваши события</h5>
+                                    <p>Управляйте предстоящими мероприятиями и смотрите историю участия</p>
+                                </div>
+                            </div>
+                            <div class="rosatom-benefit-item">
+                                <div class="rosatom-benefit-icon">📊</div>
+                                <div class="rosatom-benefit-content">
+                                    <h5>Статистика</h5>
+                                    <p>Отслеживайте свою волонтерскую активность</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rosatom-footer">
+        <div class="container">
+            <p>&copy; 2025 Добрые дела Росатома. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

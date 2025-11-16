@@ -1,0 +1,32 @@
+gitignore
+# Django
+*.pyc
+*__pycache__/
+*.sqlite3
+migrations/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Static files
+staticfiles/
+media/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

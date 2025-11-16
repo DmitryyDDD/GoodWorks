@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Добрые дела Росатома</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personal.css' %}">
+</head>
+<body>
+    <header class="rosatom-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Добрые дела <span class="logo-accent">Росатома</span></h1>
+            </div>
+            
+            <div class="header-city-selector">
+                <select id="header-city" aria-label="Выберите ваш город">
+                    <option value="">Все города</option>
+                    <option value="angarsk">Ангарск</option>
+                    <option value="baykalsk">Байкальск</option>
+                    <option value="balakovo">Балаково</option>
+                    <option value="bilibino">Билибино</option>
+                    <option value="volgodonsk">Волгодонск</option>
+                    <option value="glazov">Глазов</option>
+                    <option value="zheleznogorsk">Железногорск</option>
+                    <option value="novouralsk">Новоуральск</option>
+                    <option value="obninsk">Обнинск</option>
+                    <option value="sosnovy_bor">Сосновый Бор</option>
+                </select>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>  
+                    <li><a href="{% url 'nko_list' %}">НКО</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">База знаний</a></li>
+                    <li><a href="{% url 'calendar' %}">Календарь</a></li>
+                    <li><a href="{% url 'news_list' %}">Новости</a></li>
+                    <li><a href="{% url 'login' %}">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="rosatom-page-header">
+            <div class="container">
+                <h2>Личный кабинет</h2>
+                <p>Управляйте вашими мероприятиями, избранным и настройками</p>
+            </div>
+        </section>
+
+        <section class="rosatom-profile-section">
+            <div class="container">
+                <div class="rosatom-profile-layout">
+                    <!-- Боковая панель профиля -->
+                    <aside class="rosatom-profile-sidebar">
+                        <div class="rosatom-user-card">
+                            <div class="rosatom-user-avatar">
+                                <div class="rosatom-avatar-placeholder">👤</div>
+                            </div>
+                            <div class="rosatom-user-info">
+                                <h3 class="rosatom-user-name">Иван Иванов</h3>
+                                <p class="rosatom-user-email">ivan@example.com</p>
+                                <p class="rosatom-user-city">г. Волгодонск</p>
+                            </div>
+                        </div>
+
+                        <nav class="rosatom-profile-nav">
+                            <ul>
+                                <li><a href="#profile" class="rosatom-nav-item active" data-tab="profile">📊 Мой профиль</a></li>
+                                <li><a href="#events" class="rosatom-nav-item" data-tab="events">📅 Мои события</a></li>
+                                <li><a href="login.html" class="rosatom-nav-item rosatom-logout">🚪 Выйти</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <!-- Основное содержимое -->
+                    <div class="rosatom-profile-content">
+                        <!-- Вкладка профиля -->
+                        <div class="rosatom-tab-content active" id="profile-tab">
+                            <div class="rosatom-profile-header">
+                                <h3>Мой профиль</h3>
+                                <button class="rosatom-edit-btn">✏️ Редактировать</button>
+                            </div>
+
+                            <div class="rosatom-profile-info">
+                                <div class="rosatom-info-grid">
+                                    <div class="rosatom-info-card">
+                                        <h4>Основная информация</h4>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Имя:</span>
+                                            <span class="rosatom-info-value">Иван Иванов</span>
+                                        </div>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Email:</span>
+                                            <span class="rosatom-info-value">ivan@example.com</span>
+                                        </div>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Телефон:</span>
+                                            <span class="rosatom-info-value">+7 (900) 123-45-67</span>
+                                        </div>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Город:</span>
+                                            <span class="rosatom-info-value">Волгодонск</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="rosatom-info-card">
+                                        <h4>О себе</h4>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Интересы:</span>
+                                            <span class="rosatom-info-value">Экология, волонтерство, образование</span>
+                                        </div>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Навыки:</span>
+                                            <span class="rosatom-info-value">Организация мероприятий, работа с детьми</span>
+                                        </div>
+                                        <div class="rosatom-info-item">
+                                            <span class="rosatom-info-label">Статус:</span>
+                                            <span class="rosatom-info-value rosatom-status-active">Активный волонтер</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка событий -->
+                        <div class="rosatom-tab-content" id="events-tab">
+                            <div class="rosatom-profile-header">
+                                <h3>Мои события</h3>
+                                <div class="rosatom-tab-filters">
+                                    <button class="rosatom-filter-btn active" data-filter="upcoming">Предстоящие</button>
+                                    <button class="rosatom-filter-btn" data-filter="past">Прошедшие</button>
+                                </div>
+                            </div>
+
+                            <div class="rosatom-events-container">
+                                <div class="rosatom-events-list" id="user-events-list">
+                                    <!-- События будут загружены через JavaScript -->
+                                    <div class="rosatom-loading">Загрузка ваших событий...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rosatom-footer">
+        <div class="container">
+            <p>&copy; 2025 Добрые дела Росатома. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/personal.js' %}"></script>
+</body>
+</html>

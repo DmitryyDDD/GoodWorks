@@ -1,0 +1,308 @@
+/* ===== KNOWLEDGE.CSS - УНИКАЛЬНЫЕ СТИЛИ ДЛЯ БАЗЫ ЗНАНИЙ ===== */
+
+/* Фильтры и поиск */
+.knowledge-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.category-btn {
+    padding: 0.7rem 1.5rem;
+    border: 2px solid #0077c8;
+    background: white;
+    color: #0077c8;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: #0077c8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 119, 200, 0.3);
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 300px;
+    flex-shrink: 0;
+}
+
+#knowledge-search {
+    flex: 1;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.search-btn {
+    background: #0077c8;
+    border: none;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #005fa3;
+}
+
+/* Основной контент базы знаний */
+.knowledge-base {
+    padding: 3rem 0;
+    background: #f8f9fa;
+    min-height: 60vh;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.material-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.material-header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.material-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0077c8, #00b4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.material-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.material-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0077c8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.material-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-title {
+    margin: 0 0 1rem 0;
+    color: #004b87;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.material-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.material-title a:hover {
+    color: #0077c8;
+}
+
+.material-description {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.material-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.material-date {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.material-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.material-tag {
+    background: #e3f2fd;
+    color: #0077c8;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid #bbdefb;
+}
+
+.material-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.download-btn,
+.watch-btn,
+.preview-btn {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.download-btn {
+    background: #0077c8;
+    color: white;
+}
+
+.download-btn:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+}
+
+.watch-btn {
+    background: #00b4ff;
+    color: white;
+}
+
+.watch-btn:hover {
+    background: #0099dd;
+    transform: translateY(-2px);
+}
+
+.preview-btn {
+    background: transparent;
+    color: #0077c8;
+    border: 2px solid #0077c8;
+}
+
+.preview-btn:hover {
+    background: #0077c8;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность для базы знаний */
+@media (max-width: 1200px) {
+    .materials-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
+
+@media (max-width: 968px) {
+    .knowledge-filters {
+        flex-wrap: wrap;
+    }
+    
+    .categories {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .search-box {
+        order: 1;
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .material-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .category-btn {
+        text-align: center;
+    }
+    
+    .material-content {
+        padding: 1.25rem;
+    }
+    
+    .material-header {
+        height: 180px;
+    }
+}

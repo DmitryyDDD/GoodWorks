@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Некоммерческие организации - Добрые дела Росатома</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nko.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Добрые дела <span class="logo-accent">Росатома</span></h1>
+            </div>
+            
+            <div class="header-city-selector">
+                <select id="header-city" aria-label="Выберите ваш город">
+                    <option value="">Все города</option>
+                    <option value="angarsk">Ангарск</option>
+                    <option value="baykalsk">Байкальск</option>
+                    <option value="balakovo">Балаково</option>
+                    <option value="bilibino">Билибино</option>
+                    <option value="volgodonsk">Волгодонск</option>
+                    <option value="glazov">Глазов</option>
+                    <option value="zheleznogorsk">Железногорск</option>
+                    <option value="novouralsk">Новоуральск</option>
+                    <option value="obninsk">Обнинск</option>
+                    <option value="sosnovy_bor">Сосновый Бор</option>
+                </select>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>  
+                    <li><a href="{% url 'nko_list' %}">НКО</a></li>
+                    <li><a href="{% url 'knowledge_base' %}">База знаний</a></li>
+                    <li><a href="{% url 'calendar' %}">Календарь</a></li>
+                    <li><a href="{% url 'news_list' %}">Новости</a></li>
+                    <li><a href="{% url 'login' %}">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Некоммерческие организации</h2>
+                <p>Найдите организации в вашем городе и направлению деятельности</p>
+                
+                <div class="view-toggle">
+                    <button id="list-view" class="view-btn active">Список</button>
+                    <button id="map-view" class="view-btn">Карта</button>
+                </div>
+                
+                <div class="filters">
+                    <select id="filter-city" aria-label="Фильтр по городу">
+                        <option value="">Все города</option>
+                        <option value="angarsk">Ангарск</option>
+                        <option value="balakovo">Балаково</option>
+                        <option value="volgodonsk">Волгодонск</option>
+                        <option value="glazov">Глазов</option>
+                        <option value="zheleznogorsk">Железногорск</option>
+                        <option value="novouralsk">Новоуральск</option>
+                        <option value="obninsk">Обнинск</option>
+                        <option value="sosnovy_bor">Сосновый Бор</option>
+                    </select>
+                    
+                    <select id="filter-category" aria-label="Фильтр по категории">
+                        <option value="">Все категории</option>
+                        <option value="social">Социальная защита</option>
+                        <option value="ecology">Экология</option>
+                        <option value="culture">Культура</option>
+                        <option value="education">Образование</option>
+                        <option value="sport">Спорт</option>
+                        <option value="health">Здравоохранение</option>
+                        <option value="youth">Молодежная политика</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция списка -->
+        <section class="nko-list" id="list-section">
+            <div class="container">
+                <div class="nko-grid" id="nko-grid">
+                    <div class="loading">Загрузка организаций...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция карты -->
+        <section class="nko-map" id="map-section" style="display: none;">
+            <div class="container">
+                <div class="map-container">
+                    <div id="yandex-map" style="width: 100%; height: 600px; border-radius: 12px;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Добрые дела Росатома. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем Яндекс.Карты API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7c36f3c0-e047-4e0d-86ea-542fdab9c9a1&lang=ru_RU" type="text/javascript"></script>
+    <script src="{% static 'js/nko.js' %}"></script>
+</body>
+</html>

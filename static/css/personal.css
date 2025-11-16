@@ -1,0 +1,455 @@
+/* СТИЛИ ЛИЧНОГО КАБИНЕТА - УНИКАЛЬНЫЕ СТИЛИ */
+/* Все общие стили перенесены в style.css */
+
+/* ===== СТИЛИ ЛИЧНОГО КАБИНЕТА ===== */
+.rosatom-profile-section {
+    padding: 3rem 0;
+    background: #f8f9fa;
+    min-height: 80vh;
+}
+
+.rosatom-profile-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Боковая панель профиля */
+.rosatom-profile-sidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 2rem;
+}
+
+.rosatom-user-card {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.rosatom-user-avatar {
+    margin-bottom: 1rem;
+}
+
+.rosatom-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0077c8, #00b4ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto;
+}
+
+.rosatom-user-info h3 {
+    color: #004b87;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.rosatom-user-email {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.rosatom-user-city {
+    color: #0077c8;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Навигация профиля */
+.rosatom-profile-nav ul {
+    list-style: none;
+}
+
+.rosatom-profile-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.rosatom-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    color: #666;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.rosatom-nav-item:hover,
+.rosatom-nav-item.active {
+    background: #e3f2fd;
+    color: #0077c8;
+}
+
+.rosatom-logout {
+    color: #ff6b6b;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.rosatom-logout:hover {
+    background: #ffebee;
+    color: #ff6b6b;
+}
+
+/* Основное содержимое профиля */
+.rosatom-profile-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.rosatom-tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.rosatom-tab-content.active {
+    display: block;
+}
+
+.rosatom-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.rosatom-profile-header h3 {
+    color: #004b87;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.rosatom-edit-btn,
+.rosatom-add-btn {
+    background: #0077c8;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rosatom-edit-btn:hover,
+.rosatom-add-btn:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+}
+
+/* Информация профиля */
+.rosatom-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.rosatom-info-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #0077c8;
+}
+
+.rosatom-info-card h4 {
+    color: #004b87;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.rosatom-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.rosatom-info-item:last-child {
+    border-bottom: none;
+}
+
+.rosatom-info-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.rosatom-info-value {
+    color: #666;
+    text-align: right;
+}
+
+.rosatom-status-active {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+/* Фильтры вкладок */
+.rosatom-tab-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rosatom-filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.rosatom-filter-btn.active,
+.rosatom-filter-btn:hover {
+    background: #0077c8;
+    color: white;
+    border-color: #0077c8;
+}
+
+/* События пользователя */
+.rosatom-user-event-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.rosatom-user-event-card:hover {
+    border-color: #0077c8;
+    box-shadow: 0 2px 8px rgba(0, 119, 200, 0.1);
+}
+
+.rosatom-event-date-badge {
+    background: linear-gradient(135deg, #0077c8, #00b4ff);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 60px;
+}
+
+.rosatom-event-day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.rosatom-event-month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.rosatom-event-content {
+    flex: 1;
+}
+
+.rosatom-event-title {
+    color: #004b87;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.rosatom-event-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.rosatom-event-category,
+.rosatom-event-time,
+.rosatom-event-city {
+    background: #e3f2fd;
+    color: #0077c8;
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.rosatom-event-status {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.rosatom-event-status.registered {
+    color: #0077c8;
+}
+
+.rosatom-event-status.attended {
+    color: #4caf50;
+}
+
+.rosatom-event-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rosatom-action-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.rosatom-action-btn:hover {
+    background: #f8f9fa;
+    border-color: #0077c8;
+    color: #0077c8;
+}
+
+.rosatom-cancel-btn {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.rosatom-cancel-btn:hover {
+    background: #ffebee;
+}
+
+.rosatom-details-btn {
+    color: #0077c8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Состояния пустого контента */
+.rosatom-no-content {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+.rosatom-no-content-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.rosatom-no-content h4 {
+    color: #004b87;
+    margin-bottom: 0.5rem;
+}
+
+.rosatom-no-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Общие утилиты для личного кабинета */
+.rosatom-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+.rosatom-no-results {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+.rosatom-no-results h3 {
+    color: #004b87;
+    margin-bottom: 1rem;
+}
+
+/* ===== АДАПТИВНОСТЬ ЛИЧНОГО КАБИНЕТА ===== */
+@media (max-width: 968px) {
+    .rosatom-profile-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .rosatom-profile-sidebar {
+        position: static;
+    }
+    
+    .rosatom-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rosatom-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .rosatom-tab-filters {
+        flex-wrap: wrap;
+    }
+    
+    .rosatom-user-event-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .rosatom-event-date-badge {
+        align-self: flex-start;
+    }
+    
+    .rosatom-event-actions {
+        align-self: stretch;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .rosatom-user-event-card {
+        padding: 1.25rem;
+    }
+    
+    .rosatom-event-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .rosatom-action-btn {
+        text-align: center;
+    }
+    
+    .rosatom-no-content {
+        padding: 2rem 1rem;
+    }
+    
+    .rosatom-no-content-icon {
+        font-size: 3rem;
+    }
+}
